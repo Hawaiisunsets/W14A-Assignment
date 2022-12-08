@@ -4,6 +4,7 @@
             {{user.joke}}
 
         </div> -->
+        <button>Normal Joke: {{jokeNormal}}</button>
         <p>{{jokeNormal}}</p>
     </div>
 </template>

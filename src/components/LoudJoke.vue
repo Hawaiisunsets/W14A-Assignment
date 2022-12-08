@@ -2,7 +2,11 @@
     <div>
         <!-- <button @click="getLoudJoke">Get Loud Joke</button> -->
         <!-- <button>{{jokeLoud}}</button> -->
-        <p>{{jokeLoud.toUpperCase()}}</p>
+        <div>
+            <button>Loud Joke: {{jokeLoud.toUpperCase()}}</button>
+            <p>{{jokeLoud.toUpperCase()}}</p>
+        </div>
+
     </div>
 </template>
 

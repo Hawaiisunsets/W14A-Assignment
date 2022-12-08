@@ -1,5 +1,6 @@
 <template>
     <div>
+        <button @click="getSnake">Snake Joke: {{jokeSnake.replace(/ /g,"_")}}</button>
         <p>{{jokeSnake.replace(/ /g,"_")}}</p>
     </div>
 </template>
@@ -11,6 +12,11 @@ import axios from "axios";
         data(){
             return{
                 jokeSnake : []
+            }
+        },
+        methods : {
+            getSnake(){
+                this.jokeSnake = [];
             }
         },
         mounted(){

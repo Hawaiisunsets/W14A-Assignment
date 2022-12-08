@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <button @click="makeApi">Joke Button:{{jokeApp}}</button>
     <LoudJoke/>
     <NormalJoke/>
     <SnakeJoke/>
@@ -10,6 +11,7 @@
 import LoudJoke from "@/components/LoudJoke.vue";
 import NormalJoke from "@/components/NormalJoke.vue";
 import SnakeJoke from "@/components/SnakeJoke.vue";
+import axios from "axios";
 
 
 
@@ -20,6 +22,24 @@ export default {
     NormalJoke,
     SnakeJoke
   },
+  data(){
+    return{
+      jokeApp : []
+    }
+  },
+  methods: {
+    makeApi(){
+      axios.request({
+                url : "https://geek-jokes.sameerkumar.website/api?format=json",
+                method : "GET"
+            }).then((response)=>{
+                // console.log(response.data.joke);
+                this.jokeApp = response.data.joke;
+            }).catch((error)=>{
+                console.log(error);
+            });
+    }
+  }
 }
 </script>
 
